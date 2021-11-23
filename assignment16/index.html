@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+   <head>
+      <title>KnockoutJS Checked Radio Button Binding</title>
+      <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"
+         type = "text/javascript"></script>
+   </head>
+
+   <body>
+      <p> Select gender type from below:</p>
+      <div><input type = "radio" name = "gender" value = "Male" 
+         data-bind = "checked: checkGender" /> Male</div>
+         
+      <div><input type = "radio" name = "gender" value = "Female" 
+         data-bind = "checked: checkGender" /> Female</div>
+         
+      <div><p>You have selected: <span 
+         data-bind = "text:checkGender "></span></p></div>
+
+      <script type = "text/javascript">
+         function ViewModel () {
+            checkGender =  ko.observable("Male")     // Initially male is selected
+         };
+
+         var vm = new ViewModel();
+         ko.applyBindings(vm);
+      </script>
+      
+   </body>
+</html>
